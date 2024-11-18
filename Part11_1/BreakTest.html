@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<!-- Зураг. 8.11: BreakTest.html -->
+<!-- for давталтад break зааврыг ашиглах нь. -->
+<html>
+<head>
+	<meta charset = "utf-8">
+	<title>for давталтад break зааврыг ашиглах нь</title>
+	<script>
+
+		for ( var count = 1; count <= 10; ++count ){
+			if ( count == 5 )
+				break; //count хувьсагч 5 болох үед давталтыг төгсгөх
+
+ 			document.writeln( count + " " );
+ 		} //for давталтын төгсгөл
+
+		document.writeln("<p>count = " + count + " үед давталт төгссөн.</p>" );
+
+	</script>
+</head><body></body>
+</html>
+

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<!-- Зураг. 8.7: switchtest.html -->
+<!-- switch олон сонголтот зааврыг ашиглах нь. -->
+<html>
+<head>
+	<meta charset = "utf-8">
+	<title>HTML5 жагсаалтын форматыг солих нь</title>
+	<script>
+
+		var choice; // хэрэглэгчийн сонголт
+		var startTag; // жагсаалт таагыг эхлүүлэх
+		var endTag; // жагсаалт таагыг хаах
+ 		var validInput = true; // оролтын утга зөв бол true эсрэг тохиолдолд false
+ 		var listType; // жагсаалтын гарчигыг хадгалах хувьсагч
+
+ 		choice = window.prompt( "Жагсаалтын дугаарлах төрлийг сонгоно уу:\n" +
+ 			"1 (тоогоор), 2 (үсгээр), 3 (роман тоогоор)", "1" );
+
+ 		switch ( choice ){
+
+			case "1":
+				startTag = "<ol>";
+ 				endTag = "</ol>";
+ 				listType = "<h1>Тоогоор дугаарлагдсан жагсаалт</h1>";
+ 				break;
+ 			case "2":
+				startTag = "<ol style = 'list-style-type: upper-alpha'>";
+ 				endTag = "</ol>";
+ 				listType = "<h1>Үсгээр дугаарлагдсан жагсаалт</h1>";
+ 				break;
+ 			case "3":
+				startTag = "<ol style = 'list-style-type: upper-roman'>";
+ 				endTag = "</ol>";
+ 				listType = "<h1>Роман тоогоор дугаарлагдсан жагсаалт</h1>";
+ 				break;
+ 			default:
+ 				validInput = false;
+ 		} //end switch
+
+		if ( validInput === true ){
+		
+			document.writeln( listType + startTag );
+			for ( var i = 1; i <= 3; ++i )
+				document.writeln( "<li>Жагсаалтын зүйл " +i+ "</li>" );
+			document.writeln( endTag );
+		} //end if
+		else
+			document.writeln( "Алдаатай сонголт: " + choice );
+
+</script>
+</head><body></body>
+</html>
+

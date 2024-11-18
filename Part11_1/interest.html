@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<!-- Зураг. 8.6: interest.html -->
+<!-- for давталт ашиглан хадгаламжийн хүүг тооцоолох нь. -->
+<html>
+<head>
+	<meta charset = "utf-8">
+	<title>Хадгаламжийн хүүг тооцоолох нь</title>
+	<style type = "text/css">
+		table { 
+			width: 300px;
+			border-collapse: collapse;
+			background-color: lightblue; }
+		table, td, th { 
+			border: 1px solid black;
+			padding: 4px; }
+		th { 
+			text-align: left;
+			color: white;
+			background-color: darkblue; }
+		tr.oddrow { background-color: white; }
+	</style>
+	<script>
+
+		var amount; // хадгаламжийн үлдэгдэл
+		var principal = 100000; // анхны орлого
+		var rate = 0.05; // жилийн хүү
+		document.writeln("<table>" ); // хүснэгт эхлэж байна
+		 document.writeln( "<caption>Хадгаламжийн хүүг тооцоолох нь</caption>" );
+		 document.writeln( "<thead><tr><th>Жил</th>" ); 
+		 document.writeln( "<th>Үлдэгдэл</th>" ); 
+		 document.writeln( "</tr></thead><tbody>" );
+
+		 // Жил бүрийн үлдэгдлийн нэг мөрөнд гаргана
+		 for ( var year = 1; year <=10; ++year){ //for-ийн толгой
+		 	amount = principal * Math.pow( 1.0 + rate, year );
+			if ( year % 2 != 0 )
+		 		document.writeln( "<tr class='oddrow'><td>" + year +
+		 			"</td><td>" + amount.toFixed(2) + "</td></tr>" );
+		 	else
+		 		document.writeln( "<tr><td>" + year +
+		 			"</td><td>" + amount.toFixed(2) + "</td></tr>" );
+		 	} //for-ийн төгсгөл
+
+		 	document.writeln( "</tbody></table>" );
+
+		 </script>
+ </head>
+ <body>
+ </body>
+ </html>
+
+ 

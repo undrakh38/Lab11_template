@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<!-- Зураг. 8.12: ContinueTest.html -->
+<!-- continue зааврыг for давталтанд ашиглах нь. -->
+<html>
+<head>
+	<meta charset = "utf-8">
+	<title>continue зааврыг for давталтанд ашиглах нь</title>
+	<script>
+
+		for ( var count = 1; count <= 10; ++count ){
+			if ( count == 5 )
+				continue; //count == 5 үед давталтын үлдсэн заавруудыг биелүүлэлгүй алгасна.
+			document.writeln( count + " " );
+ 		} //end for
+
+		document.writeln( "<p>continue заавар ашиглан 5 гэж хэвлэлгүй орхино.</p>" );
+
+</script>
+
+</head><body></body>
+</html>
+
+
