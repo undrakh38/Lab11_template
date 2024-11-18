@@ -48,7 +48,7 @@ export default function Home() {
       </main>
 
       <footer className='mt-8 text-sm text-center'>
-        <p>&quot;Программ хангамжийн зохиомж ба архитектур&quot; Н.Мөнхцэцэг</p>
+        <p>&quot;Программ хангамжийн зохиомж ба архитектур&quot; Б.Мөнхбаяр</p>
       </footer>
     </div>
   );
