@@ -4,6 +4,8 @@ import React, { useState } from 'react';
 import { TeacherPermission } from '../../components/Permission/TeacherPermission';
 import { DepartmentHeadPermission } from '../../components/Permission/DepartmentHeadPermission';
 import { Input } from '@/components/ui/input';
+import { DirectorPermission } from '@/components/Permission/DirectorPermission';
+import { DeclinePermission } from '@/components/Permission/DeclinePermission';
 
 const PermissionPage = () => {
   const [days, setDays] = useState(0);
@@ -12,10 +14,16 @@ const PermissionPage = () => {
   const handleRequest = () => {
     const teacher = new TeacherPermission();
     const departmentHead = new DepartmentHeadPermission();
+    const decline = new DeclinePermission();
+    const SA = new DirectorPermission();
+
     // Хэрэгжүүлэх:
     // сургалтын алба 60-дээш хоног буюу хагас жилийн чөлөө олгоно.
     // 8-59 хоногийн хооронд чөлөө болгох боломжгүй гэсэн тайлбар бүхий чөлөөний бичиг өгөгдөнө.
     teacher.setNext(departmentHead);
+    departmentHead.setNext(decline);
+    decline.setNext(SA);
+
     setResult(teacher.handleRequest(days));
   };
 
@@ -76,7 +84,7 @@ const PermissionPage = () => {
             </code>
           </li>
           <li className='mt-2'>
-            <strong>5. Гинжийг Харагдуулах:</strong>
+            <strong>3. Гинжийг Харагдуулах:</strong>
             <br />
             UI-д зөвшөөрөл олгох үе шат бүрийг харуулах, хэн зөвшөөрсөн эсвэл
             татгалзсаныг хэрэглэгчдэд харуулна.
